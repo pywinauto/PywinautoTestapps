@@ -13,6 +13,10 @@
 
 #include "MainFrm.h"
 
+#pragma comment(linker,"\"/manifestdependency:type='win32' \
+name='Microsoft.Windows.Common-Controls' version='6.0.0.0' \
+processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -143,12 +147,13 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	DWORD dwStyle = RBBS_GRIPPERALWAYS | RBBS_FIXEDBMP | RBBS_BREAK;
 
 	if (!m_wndReBar.Create(this) ||
-		!m_wndReBar.AddBar (&m_wndMenuBar) ||
-		!m_wndReBar.AddBar (&m_wndToolBar, NULL, NULL, dwStyle))
+		!m_wndReBar.AddBar (&m_wndMenuBar, _T("Menus band:")) ||
+		!m_wndReBar.AddBar (&m_wndToolBar, _T("Tools band:"), NULL, dwStyle))
 	{
 		TRACE0("Failed to create rebar\n");
 		return -1;      // fail to create
 	}
+
 
 	m_wndMenuBar.AdjustLayout ();
 	m_wndToolBar.AdjustLayout ();
@@ -160,6 +165,35 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	EnableDocking(CBRS_ALIGN_ANY);
 	m_wndReBar.EnableDocking (CBRS_TOP);
 	DockPane (&m_wndReBar);
+	
+	
+/* An attempt to setup band titles.
+   Basically, we put titles while calling to AddBar (see above)
+	 This is just another way to do the tings.
+	 For some reason titles are not always shown yet,
+	 maybe more work with styles has to be done.
+	CString strText;
+	REBARBANDINFO bandinfo;
+	int biSize = m_wndReBar.GetReBarBandInfoSize();	
+	int nCount = m_wndReBar.GetReBarCtrl().GetBandCount();
+	for ( int i = 0; i < nCount; i++ )
+	{
+		ZeroMemory(&bandinfo, biSize);
+		bandinfo.cbSize = biSize;
+		strText.Format(_T("Band #: %d"), i);
+		bandinfo.lpText = strText.GetBuffer();
+		bandinfo.cch = strText.GetLength() + 1;
+		bandinfo.fMask = RBBIM_TEXT |RBBIM_HEADERSIZE;
+		bandinfo.cxHeader = 100;
+		BOOL res = m_wndReBar.GetReBarCtrl().SetBandInfo(i, &bandinfo);
+		if ( res == false )
+		{
+			TRACE0("Failed to set band text\n");
+		}
+		strText.ReleaseBuffer();
+	}
+	 */
+
 
 	if (!m_wndStatusBar.Create(this) ||
 		!m_wndStatusBar.SetIndicators(indicators,
