@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CmnCtrl1", "CmnCtrl1\CmnCtr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CmnCtrl2", "CmnCtrl2\CmnCtrl2.vcxproj", "{736AE1A6-14A7-490D-A8B6-8EB0B6A18956}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RebarTest", "RebarTest\RebarTest.vcxproj", "{5F7FB397-DEAD-429A-B097-09B0CCEFBC6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -29,6 +31,14 @@ Global
 		{736AE1A6-14A7-490D-A8B6-8EB0B6A18956}.Release|Win32.Build.0 = Release|Win32
 		{736AE1A6-14A7-490D-A8B6-8EB0B6A18956}.Release|x64.ActiveCfg = Release|x64
 		{736AE1A6-14A7-490D-A8B6-8EB0B6A18956}.Release|x64.Build.0 = Release|x64
+		{5F7FB397-DEAD-429A-B097-09B0CCEFBC6D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5F7FB397-DEAD-429A-B097-09B0CCEFBC6D}.Debug|Win32.Build.0 = Debug|Win32
+		{5F7FB397-DEAD-429A-B097-09B0CCEFBC6D}.Debug|x64.ActiveCfg = Debug|x64
+		{5F7FB397-DEAD-429A-B097-09B0CCEFBC6D}.Debug|x64.Build.0 = Debug|x64
+		{5F7FB397-DEAD-429A-B097-09B0CCEFBC6D}.Release|Win32.ActiveCfg = Release|Win32
+		{5F7FB397-DEAD-429A-B097-09B0CCEFBC6D}.Release|Win32.Build.0 = Release|Win32
+		{5F7FB397-DEAD-429A-B097-09B0CCEFBC6D}.Release|x64.ActiveCfg = Release|x64
+		{5F7FB397-DEAD-429A-B097-09B0CCEFBC6D}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
