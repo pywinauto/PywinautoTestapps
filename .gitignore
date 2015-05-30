@@ -1,0 +1,6 @@
+*.opensdf
+*.sdf
+**/Release/
+**/amd64/
+**/Debug/
+**/ipch/
