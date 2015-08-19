@@ -59,6 +59,7 @@ void CTreeCtrlPage::DoDataExchange(CDataExchange* pDX)
 	DDX_Check(pDX, IDC_TVSHOWSELALWAYS, m_bShowSelAlways);
 	DDX_Text(pDX, IDC_TREESTATUS, m_cstrStatus);
 	DDX_Check(pDX, IDC_TVSSINGELEXPAND, m_bSingleExpand);
+	DDX_Check(pDX, IDC_TVSCHECKBOXES, m_bCheckBoxes);
 	//}}AFX_DATA_MAP
 }
 
@@ -86,6 +87,7 @@ BEGIN_MESSAGE_MAP(CTreeCtrlPage, CPropertyPage)
 	ON_NOTIFY(TVN_ITEMEXPANDED, IDC_TREEVIEW1, ShowNotification)
 	ON_NOTIFY(TVN_DELETEITEM, IDC_TREEVIEW1, ShowNotification)
 	ON_BN_CLICKED(IDC_TVSSINGELEXPAND, OnSingleExpand)
+	ON_BN_CLICKED(IDC_TVSCHECKBOXES, OnCheckBoxes)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -186,4 +188,10 @@ void CTreeCtrlPage::OnSingleExpand()
 {
 	UpdateData(TRUE);
 	m_mytreectrl.SetNewStyle(TVS_SINGLEEXPAND, m_bSingleExpand);
+}
+
+void CTreeCtrlPage::OnCheckBoxes()
+{
+	UpdateData(TRUE);
+	m_mytreectrl.SetNewStyle(TVS_CHECKBOXES, m_bCheckBoxes);
 }

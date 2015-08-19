@@ -40,6 +40,7 @@ public:
 	BOOL    m_bShowSelAlways;
 	CString m_cstrStatus;
 	BOOL    m_bSingleExpand;
+    BOOL    m_bCheckBoxes;
 	//}}AFX_DATA
 
 
@@ -67,6 +68,7 @@ public:
 	afx_msg void OnShowSelAlways();
 	afx_msg void ShowNotification(LPNMHDR pnmhdr, LRESULT *pLResult);
 	afx_msg void OnSingleExpand();
+    afx_msg void OnCheckBoxes();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 

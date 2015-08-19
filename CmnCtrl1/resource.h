@@ -54,6 +54,7 @@
 #define IDC_TVSHOWSELALWAYS             1021
 #define IDC_TREESTATUS                  1022
 #define IDC_TVSSINGELEXPAND             1023
+#define IDC_TVSCHECKBOXES               1024
 #define IDC_BROWSE                      1025
 #define IDC_CENTER                      1026
 #define IDC_TRANSPARENT                 1027
