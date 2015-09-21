@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RebarTest", "RebarTest\Reba
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TrayMenu", "TrayMenu\TrayMenu.vcxproj", "{34545473-46B9-42A8-A54E-575BED25C115}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BCDialogMenu", "BCDialogMenu303\BCDialogMenu.vcxproj", "{43765550-D42E-95A7-DB06-D67FB49CA282}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -49,6 +51,13 @@ Global
 		{34545473-46B9-42A8-A54E-575BED25C115}.Release|Win32.Build.0 = Release|Win32
 		{34545473-46B9-42A8-A54E-575BED25C115}.Release|x64.ActiveCfg = Release|x64
 		{34545473-46B9-42A8-A54E-575BED25C115}.Release|x64.Build.0 = Release|x64
+		{43765550-D42E-95A7-DB06-D67FB49CA282}.Debug|Win32.ActiveCfg = Debug|Win32
+		{43765550-D42E-95A7-DB06-D67FB49CA282}.Debug|Win32.Build.0 = Debug|Win32
+		{43765550-D42E-95A7-DB06-D67FB49CA282}.Debug|x64.ActiveCfg = Debug|Win32
+		{43765550-D42E-95A7-DB06-D67FB49CA282}.Release|Win32.ActiveCfg = Release|Win32
+		{43765550-D42E-95A7-DB06-D67FB49CA282}.Release|Win32.Build.0 = Release|Win32
+		{43765550-D42E-95A7-DB06-D67FB49CA282}.Release|x64.ActiveCfg = Release|x64
+		{43765550-D42E-95A7-DB06-D67FB49CA282}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
