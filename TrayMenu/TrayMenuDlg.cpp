@@ -9,6 +9,7 @@
 // Microsoft Foundation Classes product.
 
 #include "stdafx.h"
+#include "popup.h"
 #include "TrayMenu.h"
 #include "TrayMenuDlg.h"
 
@@ -192,6 +193,12 @@ void CTrayMenuDlg::OnTrayContextMenu ()
 
 void CTrayMenuDlg::OnAppAbout() 
 {
+  CRect rectPopup(GetSystemMetrics(SM_CXSCREEN)-200, 
+    GetSystemMetrics(SM_CYSCREEN)-150, 
+    GetSystemMetrics(SM_CXSCREEN)-50, 
+    GetSystemMetrics(SM_CYSCREEN)-50);
+	CPopupWnd* pPopup = new CPopupWnd();
+	pPopup->Create(rectPopup);
 }
 
 void CTrayMenuDlg::OnAppExit() 
