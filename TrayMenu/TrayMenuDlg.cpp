@@ -69,6 +69,10 @@ BOOL CTrayMenuDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
+  CString strMainToolbarTitle;
+	strMainToolbarTitle.LoadString (AFX_IDS_APP_TITLE);
+  ::SetWindowText(m_hWnd, strMainToolbarTitle);
+
 	// Add "About..." menu item to system menu.
 
 	// IDM_ABOUTBOX must be in the system command range.
