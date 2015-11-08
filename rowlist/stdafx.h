@@ -10,6 +10,19 @@
 // electronic documentation provided with the library.
 // See these sources for detailed information regarding the
 // Microsoft Foundation Classes product.
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+
+#include <winsdkver.h>
+
+#ifndef _WIN32_WINNT
+// Modify the following define to target a prior platform. Refer to MSDN
+// for the latest info on corresponding values for different platforms.
+#define _WIN32_WINNT _WIN32_WINNT_MAXVER
+#endif
+
+#include <sdkddkver.h>
 
 #define VC_EXTRALEAN        // Exclude rarely-used stuff from Windows headers
 
