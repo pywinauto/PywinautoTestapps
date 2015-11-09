@@ -211,10 +211,17 @@ void CTrayMenuDlg::OnTrayContextMenu ()
   if ( hMenu == NULL )
     return;
 
-	CMFCPopupMenu* pMenu = theApp.GetContextMenuManager()->ShowPopupMenu(hMenu, point.x, point.y, this, TRUE);
+  OutputDebugStringW(_T("CTrayMenuDlg::OnTrayContextMenu GetContextMenuManager\n"));
+  auto ctxMgr = theApp.GetContextMenuManager();
+  if ( ctxMgr == NULL )
+    return;
+
+  OutputDebugStringW(_T("CTrayMenuDlg::OnTrayContextMenu ShowPopupMenu\n"));
+	CMFCPopupMenu* pMenu = ctxMgr->ShowPopupMenu(hMenu, point.x, point.y, this, TRUE);
   if ( pMenu == NULL )
     return;
 
+  OutputDebugStringW(_T("CTrayMenuDlg::OnTrayContextMenu SetForegroundWindow\n"));
 	pMenu->SetForegroundWindow ();
   OutputDebugStringW(_T("CTrayMenuDlg::OnTrayContextMenu exit\n"));
 }
