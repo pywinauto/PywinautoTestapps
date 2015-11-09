@@ -181,18 +181,42 @@ LRESULT CTrayMenuDlg::OnTrayNotify(WPARAM /*wp*/, LPARAM lp)
 
 void CTrayMenuDlg::OnTrayContextMenu ()
 {
+  OutputDebugStringW(_T("CTrayMenuDlg::OnTrayContextMenu enter\n"));
 	CPoint point;
-	::GetCursorPos (&point);
+  point.x = point.y = 0;
 
+  OutputDebugStringW(_T("CTrayMenuDlg::OnTrayContextMenu GetCursorPos\n"));
+	BOOL res = ::GetCursorPos (&point);
+  if ( !res )
+    return;
+
+  OutputDebugStringW(_T("CTrayMenuDlg::OnTrayContextMenu build menu\n"));
 	CMenu menu;
-	menu.LoadMenu (IDR_MENU1);
 
+  OutputDebugStringW(_T("CTrayMenuDlg::OnTrayContextMenu load menu\n"));
+	res = menu.LoadMenu (IDR_MENU1);
+  if ( !res )
+    return;
+
+  OutputDebugStringW(_T("CTrayMenuDlg::OnTrayContextMenu SetForceShadow\n"));
 	CMFCPopupMenu::SetForceShadow (TRUE);
 
-	HMENU hMenu = menu.GetSubMenu (0)->Detach ();
+  OutputDebugStringW(_T("CTrayMenuDlg::OnTrayContextMenu GetSubMenu\n"));
+  CMenu *tmpMenu = menu.GetSubMenu (0);
+  if ( tmpMenu == NULL )
+    return;
+
+  OutputDebugStringW(_T("CTrayMenuDlg::OnTrayContextMenu Detach\n"));
+	HMENU hMenu = tmpMenu->Detach ();
+  if ( hMenu == NULL )
+    return;
+
 	CMFCPopupMenu* pMenu = theApp.GetContextMenuManager()->ShowPopupMenu(hMenu, point.x, point.y, this, TRUE);
+  if ( pMenu == NULL )
+    return;
 
 	pMenu->SetForegroundWindow ();
+  OutputDebugStringW(_T("CTrayMenuDlg::OnTrayContextMenu exit\n"));
 }
 
 void CTrayMenuDlg::OnAppAbout() 
