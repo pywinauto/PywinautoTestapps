@@ -33,5 +33,41 @@ namespace WpfApplication1
         {
            //TODO:
         }
+
+        private void button1_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            switch (e.ClickCount)
+            {
+                case 1:
+                    label1.Content = "LeftClick";
+                    break;
+                case 2:
+                    label1.Content = "DoubleClick";
+                    break;
+                default:
+                    label1.Content = "TestLabel";
+                    break;
+            }
+        }
+
+        private void button1_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            label1.Content = "RightClick";
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            label1.Content = "ApplyClick";
+        }
     }
 }

@@ -1,11 +1,11 @@
 ﻿<Window x:Class="WpfApplication1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="WPF Sample Application" Height="350" Width="525">
     <Canvas>
         <ToolBarTray Orientation="Horizontal"
     Canvas.Left="0" Canvas.Top="0">
-            <ToolBar>
+            <ToolBar Name="menu_toolbar">
             <Menu>
                 <MenuItem Header="_File">
                     <MenuItem Header="_Open" />
@@ -14,59 +14,52 @@
                         <MenuItem Header="_Later"/>
                     </MenuItem>
                 </MenuItem>
-                <MenuItem Header="_Edit">
+                <MenuItem Header="_Edit" Name="mnuItmEdit">
                     <MenuItem Command="ApplicationCommands.Copy" />
                     <MenuItem Command="ApplicationCommands.Paste" />
                 </MenuItem>
                 </Menu>
             </ToolBar>
             <ToolBar Header="Alpha" Band="1">
-                <Button>button 1</Button>
-                <Button>button 2</Button>
+                <Button Name="toolbar_button1">button 1</Button>
+                <Button Name="toolbar_button2">button 2</Button>
             </ToolBar>
             <ToolBar Header="Bravo" Band="1">
-                <Button>button 3</Button>
-                <Button>button 4</Button>
+                <Button Name="toolbar_button3">button 3</Button>
+                <Button Name="toolbar_button4">button 4</Button>
             </ToolBar>
         </ToolBarTray>
+        <Label Canvas.Top="67" Canvas.Left="12" Width="140" Content="TestLabel" Name="label1" />
+        <TextBox Canvas.Top="99" Canvas.Left="12" Width="140" Name="edit1"/>
+        <Button Content="OK" Name="button1" PreviewMouseLeftButtonDown="button1_PreviewMouseLeftButtonDown" MouseRightButtonDown="button1_MouseRightButtonDown" Click="button1_Click" Canvas.Top="129" Canvas.Left="12" Height="22" Width="140" />
+        <Button Content="Apply" Name="button2"  Click="button2_Click" Canvas.Top="158" Canvas.Left="12" Height="22" Width="140" />
+        <CheckBox IsChecked="{x:Null}" Content="CheckBox" Name="checkBox1" Canvas.Top="191" Canvas.Left="10" />
         
-        <!-- Clicking MyButton will call the "MyButton_Click_1" method in your code -->
-        <Button Name="MyButton" Click="MyButton_Click_1"
-    Canvas.Top="60" Canvas.Left="10">Click Me</Button>
-
         <!-- The button will intially be toggled or "pressed down" -->
         <ToggleButton IsChecked="True"
-    Canvas.Top="90" Canvas.Left="10">Toggle Me</ToggleButton>
-
-        <CheckBox IsChecked="True"
-    Canvas.Top="130" Canvas.Left="10">Check Me 1</CheckBox>
-
+    Canvas.Top="140" Canvas.Left="234" Checked="ToggleButton_Checked">Toggle Me</ToggleButton>
         <!-- Shows the indeterminate state; a grey check -->
-        <CheckBox IsChecked="{x:Null}"
-    Canvas.Top="130" Canvas.Left="110">Check Me 2</CheckBox>
-
         <RadioButton IsChecked="False"
-    Canvas.Top="60" Canvas.Left="80">Yes</RadioButton>
+    Canvas.Top="70" Canvas.Left="169">Yes</RadioButton>
 
         <RadioButton IsChecked="True"
-    Canvas.Top="90" Canvas.Left="80">No</RadioButton>
+    Canvas.Top="100" Canvas.Left="169">No</RadioButton>
 
-        <TextBox Canvas.Top="60" Canvas.Left="200">standard text input</TextBox>
-        <PasswordBox Canvas.Top="90" Canvas.Left="200" Password="secret" />
-        <Label Name="Label1" Canvas.Top="130" Canvas.Left="200">basic read-only text</Label>
-        <RichTextBox Width="180" Height="50" Canvas.Top="170" Canvas.Left="10">
+        <PasswordBox Canvas.Top="100" Canvas.Left="234" Password="secret" />
+        <Label Name="label2" Canvas.Top="192" Canvas.Left="234">basic read-only text</Label>
+        <RichTextBox Width="180" Height="54" Canvas.Top="230" Canvas.Left="10">
             <FlowDocument>
                 <Paragraph>
-            RichTextBox
-                    </Paragraph>
+                    RichTextBox
+                </Paragraph>
             </FlowDocument>
         </RichTextBox>
 
         <ProgressBar Width="170" Height="20" 
     Value="70" Maximum="100"
-    Canvas.Left="200" Canvas.Top="170" />
+    Canvas.Left="234" Canvas.Top="230" />
 
         <Slider Width="170" Value="70" Maximum="100"
-    Canvas.Left="200" Canvas.Top="200" TickPlacement="BottomRight" TickFrequency="10" ValueChanged="Slider_ValueChanged" />
+    Canvas.Left="234" Canvas.Top="260" TickPlacement="BottomRight" TickFrequency="10" ValueChanged="Slider_ValueChanged" />
     </Canvas>
 </Window>
