@@ -46,6 +46,10 @@
     Canvas.Top="100" Canvas.Left="169">No</RadioButton>
 
         <PasswordBox Canvas.Top="100" Canvas.Left="234" Password="secret" />
+        <ComboBox Canvas.Top="100" Canvas.Left="301" Height="25" Width="120">
+            <ComboBoxItem>Combo Item 1</ComboBoxItem>
+            <ComboBoxItem>Combo Item 2</ComboBoxItem>
+        </ComboBox>
         <Label Name="label2" Canvas.Top="192" Canvas.Left="234">basic read-only text</Label>
         <RichTextBox Width="180" Height="54" Canvas.Top="230" Canvas.Left="10">
             <FlowDocument>
