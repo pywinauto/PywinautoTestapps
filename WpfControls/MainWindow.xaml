@@ -6,18 +6,18 @@
         <ToolBarTray Orientation="Horizontal"
     Canvas.Left="0" Canvas.Top="0">
             <ToolBar Name="menu_toolbar">
-            <Menu>
-                <MenuItem Header="_File">
-                    <MenuItem Header="_Open" />
+                <Menu>
+                    <MenuItem Header="_File">
+                        <MenuItem Header="_Open" />
                         <MenuItem Header="_Close" >
-                        <MenuItem Header="_Now"/>
-                        <MenuItem Header="_Later"/>
+                            <MenuItem Header="_Now"/>
+                            <MenuItem Header="_Later"/>
+                        </MenuItem>
                     </MenuItem>
-                </MenuItem>
-                <MenuItem Header="_Edit" Name="mnuItmEdit">
-                    <MenuItem Command="ApplicationCommands.Copy" />
-                    <MenuItem Command="ApplicationCommands.Paste" />
-                </MenuItem>
+                    <MenuItem Header="_Edit" Name="mnuItmEdit">
+                        <MenuItem Command="ApplicationCommands.Copy" />
+                        <MenuItem Command="ApplicationCommands.Paste" />
+                    </MenuItem>
                 </Menu>
             </ToolBar>
             <ToolBar Header="Alpha" Band="1">
@@ -29,41 +29,86 @@
                 <Button Name="toolbar_button4">button 4</Button>
             </ToolBar>
         </ToolBarTray>
-        <Label Canvas.Top="67" Canvas.Left="12" Width="140" Content="TestLabel" Name="label1" />
-        <TextBox Canvas.Top="99" Canvas.Left="12" Width="140" Name="edit1"/>
-        <Button Content="OK" Name="button1" PreviewMouseLeftButtonDown="button1_PreviewMouseLeftButtonDown" MouseRightButtonDown="button1_MouseRightButtonDown" Click="button1_Click" Canvas.Top="129" Canvas.Left="12" Height="22" Width="140" />
-        <Button Content="Apply" Name="button2"  Click="button2_Click" Canvas.Top="158" Canvas.Left="12" Height="22" Width="140" />
-        <CheckBox IsChecked="{x:Null}" Content="CheckBox" Name="checkBox1" Canvas.Top="191" Canvas.Left="10" />
-        
-        <!-- The button will intially be toggled or "pressed down" -->
-        <ToggleButton IsChecked="True"
-    Canvas.Top="140" Canvas.Left="234" Checked="ToggleButton_Checked">Toggle Me</ToggleButton>
-        <!-- Shows the indeterminate state; a grey check -->
-        <RadioButton IsChecked="False"
-    Canvas.Top="70" Canvas.Left="169">Yes</RadioButton>
 
-        <RadioButton IsChecked="True"
-    Canvas.Top="100" Canvas.Left="169">No</RadioButton>
+        <TabControl Height="250" Width="503" Canvas.Top="60">
+            <TabItem>
+                <TabItem.Header>
+                    <Label Content="General"/>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Width="140" Content="TestLabel" Name="label1" Margin="13,0,12,1" />
+                    <TextBox Width="140" Name="edit1" Margin="13,0,12,1" Grid.Row="1" />
+                    <Button Content="OK" Name="button1" PreviewMouseLeftButtonDown="button1_PreviewMouseLeftButtonDown" MouseRightButtonDown="button1_MouseRightButtonDown" Click="button1_Click" Canvas.Top="129" Canvas.Left="12" Height="22" Width="140" Margin="13,9,12,12" Grid.Row="4" />
+                    <Button Content="Apply" Name="button2"  Click="button2_Click" Height="22" Width="140" Margin="13,8,12,12" Grid.Row="2" />
+                    <CheckBox IsChecked="{x:Null}" Content="CheckBox" Name="checkBox1" Grid.Column="1" Grid.Row="1" />
 
-        <PasswordBox Canvas.Top="100" Canvas.Left="234" Password="secret" />
-        <ComboBox Canvas.Top="100" Canvas.Left="301" Height="25" Width="120">
-            <ComboBoxItem>Combo Item 1</ComboBoxItem>
-            <ComboBoxItem>Combo Item 2</ComboBoxItem>
-        </ComboBox>
-        <Label Name="label2" Canvas.Top="192" Canvas.Left="234">basic read-only text</Label>
-        <RichTextBox Width="180" Height="54" Canvas.Top="230" Canvas.Left="10">
-            <FlowDocument>
-                <Paragraph>
-                    RichTextBox
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
+                    <!-- The button will intially be toggled or "pressed down" -->
+                    <ToggleButton IsChecked="True"
+    Checked="ToggleButton_Checked" Grid.Column="1" Grid.Row="4" Margin="1,7,0,7" HorizontalAlignment="Left" Width="149">Toggle Me</ToggleButton>
+                    <!-- Shows the indeterminate state; a grey check -->
+                    <RadioButton IsChecked="False"
+    Grid.Column="2" Grid.Row="2">Yes</RadioButton>
 
-        <ProgressBar Width="170" Height="20" 
-    Value="70" Maximum="100"
-    Canvas.Left="234" Canvas.Top="230" />
+                    <RadioButton IsChecked="True"
+    Grid.Column="2" Margin="2,2,-2,40" Grid.Row="1" Grid.RowSpan="2">No</RadioButton>
 
-        <Slider Width="170" Value="70" Maximum="100"
-    Canvas.Left="234" Canvas.Top="260" TickPlacement="BottomRight" TickFrequency="10" ValueChanged="Slider_ValueChanged" />
+                    <PasswordBox Canvas.Top="100" Canvas.Left="234" Password="secret" Grid.Column="1" Margin="0,0,15,0" />
+                    <ComboBox Height="25" Width="120" Grid.Column="2" Margin="7,6,39,12">
+                        <ComboBoxItem>Combo Item 1</ComboBoxItem>
+                        <ComboBoxItem>Combo Item 2</ComboBoxItem>
+                    </ComboBox>
+                    <Label Name="label2" Grid.Row="3" Margin="13,0">basic read-only text</Label>
+                    <RichTextBox Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Margin="0,0,15,0">
+                        <FlowDocument>
+                            <Paragraph>
+                                RichTextBox
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+
+                    <ProgressBar Height="20" Value="70" Maximum="100"
+          Grid.Column="2" Margin="0,8,6,14" Grid.Row="4" HorizontalAlignment="Right" Width="152" />
+
+                    <Slider Value="70" Maximum="100"
+         TickPlacement="BottomRight" TickFrequency="10" ValueChanged="Slider_ValueChanged" Grid.Column="2" Margin="1,0,0,0" Grid.Row="3" />
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Label Content="Views"/>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <ListView>
+                        <ListViewItem>Tomatoe</ListViewItem>
+                        <ListViewItem>Cucumber</ListViewItem>
+                        <ListViewItem>Reddish</ListViewItem>
+                        <ListViewItem>Cauliflower</ListViewItem>
+                    </ListView>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Canvas>
 </Window>
