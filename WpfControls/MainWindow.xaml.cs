@@ -14,6 +14,16 @@ using System.Windows.Shapes;
 
 namespace WpfApplication1
 {
+
+    public class LvItem
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string Color { get; set; }
+    }
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -22,6 +32,24 @@ namespace WpfApplication1
         public MainWindow()
         {
             InitializeComponent();
+
+            // Populate the list
+            this.lvVegs.Items.Add(
+                new LvItem { Id = 1, Name = "Tobatoe", Color = "Red" });
+            this.lvVegs.Items.Add(
+                new LvItem { Id = 2, Name = "Cucumber", Color = "Green" });
+            this.lvVegs.Items.Add(
+                new LvItem { Id = 3, Name = "Reddish", Color = "Purple" });
+            this.lvVegs.Items.Add(
+                new LvItem { Id = 4, Name = "Cauliflower", Color = "White and Green" });
+            this.lvVegs.Items.Add(
+                new LvItem { Id = 5, Name = "Cupsicum", Color = "Yellow" });
+            this.lvVegs.Items.Add(
+                new LvItem { Id = 6, Name = "Cupsicum", Color = "Red" });
+            this.lvVegs.Items.Add(
+                new LvItem { Id = 6, Name = "Cupsicum", Color = "Green" });
+
+
         }
 
         private void MyButton_Click_1(object sender, RoutedEventArgs e)

@@ -109,7 +109,7 @@
                                 <EventSetter Event="TreeViewItem.MouseDown" Handler="TreeView_MouseDown"/>
                             </Style>
                         </TreeView.ItemContainerStyle>
-                        <TreeViewItem Header="Date Tree View" IsExpanded="True">
+                        <TreeViewItem Header="Date Elements" IsExpanded="True">
                             <TreeViewItem Header="Empty Date"  Tag="computer"/>
                             <TreeViewItem Header="Week" IsExpanded="True">
                                 <TreeViewItem Header="Monday"/>
@@ -141,11 +141,14 @@
                             </TreeViewItem>
                         </TreeViewItem>
                     </TreeView>
-                    <ListView Grid.Column="1" Margin="0,0,3,0">
-                        <ListViewItem>Tomatoe</ListViewItem>
-                        <ListViewItem>Cucumber</ListViewItem>
-                        <ListViewItem>Reddish</ListViewItem>
-                        <ListViewItem>Cauliflower</ListViewItem>
+                    <ListView x:Name="lvVegs" Grid.Column="1" Margin="6,0" Grid.ColumnSpan="2" Grid.RowSpan="3">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Id" Width="40"  DisplayMemberBinding="{Binding Id}" />
+                                <GridViewColumn Header="Name" Width="120"  DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn Header="Color" Width="120"  DisplayMemberBinding="{Binding Color}" />
+                            </GridView>
+                        </ListView.View>
                     </ListView>
                 </Grid>
             </TabItem>
