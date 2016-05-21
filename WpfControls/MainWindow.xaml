@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="WPF Sample Application" Height="350" Width="525">
     <Canvas>
-        <ToolBarTray Orientation="Horizontal"
-    Canvas.Left="0" Canvas.Top="0">
+        <ToolBarTray Orientation="Horizontal" Canvas.Left="0" Canvas.Top="0">
             <ToolBar Name="menu_toolbar">
                 <Menu>
                     <MenuItem Header="_File">
@@ -101,7 +100,48 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <ListView>
+                    <TreeView Name="tv" AllowDrop="True" Grid.RowSpan="3">
+                        <TreeView.ItemContainerStyle>
+                            <Style TargetType="{x:Type TreeViewItem}">
+                                <EventSetter Event="TreeViewItem.DragOver"  Handler="treeView_DragOver"/>
+                                <EventSetter Event="TreeViewItem.Drop"      Handler="treeView_Drop" />
+                                <EventSetter Event="TreeViewItem.MouseMove" Handler="treeView_MouseMove"/>
+                                <EventSetter Event="TreeViewItem.MouseDown" Handler="TreeView_MouseDown"/>
+                            </Style>
+                        </TreeView.ItemContainerStyle>
+                        <TreeViewItem Header="Date Tree View" IsExpanded="True">
+                            <TreeViewItem Header="Empty Date"  Tag="computer"/>
+                            <TreeViewItem Header="Week" IsExpanded="True">
+                                <TreeViewItem Header="Monday"/>
+                                <TreeViewItem Header="Tuesday" />
+                                <TreeViewItem Header="Wednsday" />
+                                <TreeViewItem Header="Thursday" />
+                                <TreeViewItem Header="Friday" />
+                                <TreeViewItem Header="Saturday" />
+                                <TreeViewItem Header="Sunday" />
+                            </TreeViewItem>
+                            <TreeViewItem Header="Months">
+                                <TreeViewItem Header="January"/>
+                                <TreeViewItem Header="February"/>
+                                <TreeViewItem Header="March"/>
+                                <TreeViewItem Header="April"/>
+                                <TreeViewItem Header="June"/>
+                                <TreeViewItem Header="July"/>
+                                <TreeViewItem Header="August"/>
+                                <TreeViewItem Header="Semptember"/>
+                                <TreeViewItem Header="October"/>
+                                <TreeViewItem Header="November"/>
+                                <TreeViewItem Header="December"/>
+                            </TreeViewItem>
+                            <TreeViewItem Header="Years" Selected="TreeViewItem_Selected">
+                                <TreeViewItem Header="2015" Tag="computer"/>
+                                <TreeViewItem Header="2016" />
+                                <TreeViewItem Header="2017" />
+                                <TreeViewItem Header="2018" />
+                            </TreeViewItem>
+                        </TreeViewItem>
+                    </TreeView>
+                    <ListView Grid.Column="1" Margin="0,0,3,0">
                         <ListViewItem>Tomatoe</ListViewItem>
                         <ListViewItem>Cucumber</ListViewItem>
                         <ListViewItem>Reddish</ListViewItem>
