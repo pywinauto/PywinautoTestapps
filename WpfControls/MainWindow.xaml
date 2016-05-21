@@ -144,9 +144,21 @@
                     <ListView x:Name="lvVegs" Grid.Column="1" Margin="6,0" Grid.ColumnSpan="2" Grid.RowSpan="3">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Id" Width="40"  DisplayMemberBinding="{Binding Id}" />
-                                <GridViewColumn Header="Name" Width="120"  DisplayMemberBinding="{Binding Name}" />
-                                <GridViewColumn Header="Color" Width="120"  DisplayMemberBinding="{Binding Color}" />
+                                <GridViewColumn Width="40"  DisplayMemberBinding="{Binding Id}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Id" Click="lvUsersColumnHeader_Click">Id</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn Width="120"  DisplayMemberBinding="{Binding Name}" >
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Name" Click="lvUsersColumnHeader_Click">Name</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn Width="120"  DisplayMemberBinding="{Binding Color}" >
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Color" Click="lvUsersColumnHeader_Click">Color</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>

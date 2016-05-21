@@ -11,10 +11,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
 
 namespace WpfApplication1
 {
-
+    // ListView item
     public class LvItem
     {
         public int Id { get; set; }
@@ -22,6 +23,46 @@ namespace WpfApplication1
         public string Name { get; set; }
 
         public string Color { get; set; }
+    };
+
+    // A helper to draw a sort direction indicator
+    public class SortAdorner : Adorner
+    {
+        private static Geometry ascGeometry =
+                Geometry.Parse("M 0 4 L 3.5 0 L 7 4 Z");
+
+        private static Geometry descGeometry =
+                Geometry.Parse("M 0 0 L 3.5 4 L 7 0 Z");
+
+        public ListSortDirection Direction { get; private set; }
+
+        public SortAdorner(UIElement element, ListSortDirection dir)
+            : base(element)
+        {
+            this.Direction = dir;
+        }
+
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+            base.OnRender(drawingContext);
+
+            if (AdornedElement.RenderSize.Width < 20)
+                return;
+
+            TranslateTransform transform = new TranslateTransform
+                    (
+                            AdornedElement.RenderSize.Width - 15,
+                            (AdornedElement.RenderSize.Height - 5) / 2
+                    );
+            drawingContext.PushTransform(transform);
+
+            Geometry geometry = ascGeometry;
+            if (this.Direction == ListSortDirection.Descending)
+                geometry = descGeometry;
+            drawingContext.DrawGeometry(Brushes.Black, null, geometry);
+
+            drawingContext.Pop();
+        }
     }
 
     /// <summary>
@@ -35,19 +76,19 @@ namespace WpfApplication1
 
             // Populate the list
             this.lvVegs.Items.Add(
-                new LvItem { Id = 1, Name = "Tobatoe", Color = "Red" });
+                new LvItem { Id = 1, Name = "Tomatoe", Color = "Red" });
             this.lvVegs.Items.Add(
                 new LvItem { Id = 2, Name = "Cucumber", Color = "Green" });
             this.lvVegs.Items.Add(
                 new LvItem { Id = 3, Name = "Reddish", Color = "Purple" });
             this.lvVegs.Items.Add(
-                new LvItem { Id = 4, Name = "Cauliflower", Color = "White and Green" });
+                new LvItem { Id = 4, Name = "Cauliflower", Color = "White" });
             this.lvVegs.Items.Add(
                 new LvItem { Id = 5, Name = "Cupsicum", Color = "Yellow" });
             this.lvVegs.Items.Add(
                 new LvItem { Id = 6, Name = "Cupsicum", Color = "Red" });
             this.lvVegs.Items.Add(
-                new LvItem { Id = 6, Name = "Cupsicum", Color = "Green" });
+                new LvItem { Id = 7, Name = "Cupsicum", Color = "Green" });
 
 
         }
@@ -292,6 +333,31 @@ namespace WpfApplication1
         {
 
         }
+
+        // ListView columns sort
+        // http://www.wpf-tutorial.com/listview-control/listview-how-to-column-sorting/
+        private GridViewColumnHeader listViewSortCol = null;
+        private SortAdorner listViewSortAdorner = null;
+        private void lvUsersColumnHeader_Click(object sender, RoutedEventArgs e)
+        {
+            GridViewColumnHeader column = (sender as GridViewColumnHeader);
+            string sortBy = column.Tag.ToString();
+            if (listViewSortCol != null)
+            {
+                AdornerLayer.GetAdornerLayer(listViewSortCol).Remove(listViewSortAdorner);
+                lvVegs.Items.SortDescriptions.Clear();
+            }
+
+            ListSortDirection newDir = ListSortDirection.Ascending;
+            if (listViewSortCol == column && listViewSortAdorner.Direction == newDir)
+                newDir = ListSortDirection.Descending;
+
+            listViewSortCol = column;
+            listViewSortAdorner = new SortAdorner(listViewSortCol, newDir);
+            AdornerLayer.GetAdornerLayer(listViewSortCol).Add(listViewSortAdorner);
+            lvVegs.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
+        }
+
 
     } // public partial class MainWindow 
 } // namespace WpfApplication1
