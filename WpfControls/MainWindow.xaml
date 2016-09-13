@@ -9,8 +9,8 @@
                     <MenuItem Header="_File">
                         <MenuItem Header="_Open" />
                         <MenuItem Header="_Close" >
-                            <MenuItem Header="_Now"/>
-                            <MenuItem Header="_Later"/>
+                            <MenuItem Header="_Now" x:Name="_Now" Click="MenuNow_Click"/>
+                            <MenuItem Header="_Later" x:Name="_Later" Click="MenuLater_Click"/>
                         </MenuItem>
                     </MenuItem>
                     <MenuItem Header="_Edit" Name="mnuItmEdit">

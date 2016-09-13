@@ -93,6 +93,16 @@ namespace WpfApplication1
 
         }
 
+        private void MenuLater_Click(object sender, RoutedEventArgs e)
+        {
+            label1.Content = "MenuLaterClick";
+        }
+
+        private void MenuNow_Click(object sender, RoutedEventArgs e)
+        {
+            label1.Content = "MenuNowClick";
+        }
+
         private void MyButton_Click_1(object sender, RoutedEventArgs e)
         {
             //TODO:
