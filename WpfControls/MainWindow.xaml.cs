@@ -23,7 +23,14 @@ namespace WpfApplication1
         public string Name { get; set; }
 
         public string Color { get; set; }
-    };
+    }
+
+    // Row for DataGrid
+    public class DataGridRow
+    {
+        public string Header { get; set; }
+        public List<string> RowData { get; set; }
+    }
 
     // A helper to draw a sort direction indicator
     public class SortAdorner : Adorner
@@ -70,27 +77,23 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Source for DataGrid
+        public List<DataGridRow> dataGridData;
+
         public MainWindow()
         {
             InitializeComponent();
 
             // Populate the list
-            this.lvVegs.Items.Add(
-                new LvItem { Id = 1, Name = "Tomatoe", Color = "Red" });
-            this.lvVegs.Items.Add(
-                new LvItem { Id = 2, Name = "Cucumber", Color = "Green" });
-            this.lvVegs.Items.Add(
-                new LvItem { Id = 3, Name = "Reddish", Color = "Purple" });
-            this.lvVegs.Items.Add(
-                new LvItem { Id = 4, Name = "Cauliflower", Color = "White" });
-            this.lvVegs.Items.Add(
-                new LvItem { Id = 5, Name = "Cupsicum", Color = "Yellow" });
-            this.lvVegs.Items.Add(
-                new LvItem { Id = 6, Name = "Cupsicum", Color = "Red" });
-            this.lvVegs.Items.Add(
-                new LvItem { Id = 7, Name = "Cupsicum", Color = "Green" });
+            this.lvVegs.Items.Add(new LvItem { Id = 1, Name = "Tomatoe", Color = "Red" });
+            this.lvVegs.Items.Add(new LvItem { Id = 2, Name = "Cucumber", Color = "Green" });
+            this.lvVegs.Items.Add(new LvItem { Id = 3, Name = "Reddish", Color = "Purple" });
+            this.lvVegs.Items.Add(new LvItem { Id = 4, Name = "Cauliflower", Color = "White" });
+            this.lvVegs.Items.Add(new LvItem { Id = 5, Name = "Cupsicum", Color = "Yellow" });
+            this.lvVegs.Items.Add(new LvItem { Id = 6, Name = "Cupsicum", Color = "Red" });
+            this.lvVegs.Items.Add(new LvItem { Id = 7, Name = "Cupsicum", Color = "Green" });
 
-
+            FillDataGrid(4, 5);
         }
 
         private void MenuLater_Click(object sender, RoutedEventArgs e)
@@ -368,6 +371,38 @@ namespace WpfApplication1
             lvVegs.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
         }
 
+        // Create source data for DataGrid
+        void FillDataGrid(int rowCount, int columnCount)
+        {
+            // Create source data
+            dataGridData = new List<DataGridRow>();
+            for (int i = 0; i < rowCount; ++i)
+            {
+                string header = i.ToString();
+                List<string> rowData = new List<string>();
+                for (int j = 0; j < columnCount; ++j)
+                {
+                    rowData.Add((char)('A' + (char)j) + i.ToString());
+                }
 
+                dataGridData.Add(new DataGridRow() { Header = header, RowData = rowData });
+            }
+
+            // Create DataGrid columns and bind data
+            for (int i = 0; i < columnCount; ++i)
+            {
+                DataGridTextColumn gridColumn = new DataGridTextColumn();
+
+                Binding binding = new Binding(String.Format("RowData[{0}]", i));
+                binding.Mode = BindingMode.TwoWay;
+
+                gridColumn.Binding = binding;
+                gridColumn.Header = (char)('A' + (char)i);
+
+                dataGrid1.Columns.Add(gridColumn);
+            }
+
+            dataGrid1.ItemsSource = dataGridData;
+        }
     } // public partial class MainWindow 
 } // namespace WpfApplication1
