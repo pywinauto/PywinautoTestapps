@@ -86,7 +86,7 @@
             </TabItem>
             <TabItem>
                 <TabItem.Header>
-                    <Label Content="Views"/>
+                    <Label Content="Tree and List Views"/>
                 </TabItem.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -162,6 +162,42 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
+                </Grid>
+            </TabItem>
+            
+            <TabItem>
+                <TabItem.Header>
+                    <Label Content="ListBox and Grid"/>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="listBox1" Grid.RowSpan="3">
+                        <ListBoxItem Content="TextItem 1"/>
+                        <ListBoxItem Content="TextItem 2"/>
+                        <Button Content="ButtonItem"/>
+                        <CheckBox Content="CheckItem"/>
+                        <ListBoxItem Content="TextItem 3"/>
+                        <ListBoxItem Content="TextItem 4"/>
+                        <ListBoxItem Content="TextItem 5"/>
+                        <ListBoxItem Content="TextItem 6"/>
+                        <ListBoxItem Content="TextItem 7"/>
+                        <ListBoxItem Content="TextItem 8"/>
+                    </ListBox>
+                    <DataGrid x:Name="dataGrid1" Grid.Column="1" Margin="6,0" Grid.ColumnSpan="2" Grid.RowSpan="3" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=Header}" Header="/" IsReadOnly="True"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </TabItem>
         </TabControl>
