@@ -67,7 +67,7 @@ int main(int argv, char **args)
     QWidget window;
     window.setLayout(layout);
     window.setWindowTitle("Mouse Button Tester");
-    window.show();
+    window.showFullScreen();
 
     return app.exec();
 }
