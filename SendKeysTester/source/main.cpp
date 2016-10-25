@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
     MainWindow mainWin;
     if (!parser.positionalArguments().isEmpty())
         mainWin.loadFile(parser.positionalArguments().first());
-    mainWin.show();
+    mainWin.showFullScreen();
     return app.exec();
 }
 //! [0]
