@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListViewEx", "ListViewEx.csproj", "{35A5C415-0906-4AC7-B0F6-FE3CCA884AD9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{0FF429FB-BB20-4B68-8CEA-330C2A644A0B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{35A5C415-0906-4AC7-B0F6-FE3CCA884AD9}.Debug.ActiveCfg = Debug|.NET
+		{35A5C415-0906-4AC7-B0F6-FE3CCA884AD9}.Debug.Build.0 = Debug|.NET
+		{35A5C415-0906-4AC7-B0F6-FE3CCA884AD9}.Release.ActiveCfg = Release|.NET
+		{35A5C415-0906-4AC7-B0F6-FE3CCA884AD9}.Release.Build.0 = Release|.NET
+		{0FF429FB-BB20-4B68-8CEA-330C2A644A0B}.Debug.ActiveCfg = Debug|.NET
+		{0FF429FB-BB20-4B68-8CEA-330C2A644A0B}.Debug.Build.0 = Debug|.NET
+		{0FF429FB-BB20-4B68-8CEA-330C2A644A0B}.Release.ActiveCfg = Release|.NET
+		{0FF429FB-BB20-4B68-8CEA-330C2A644A0B}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
