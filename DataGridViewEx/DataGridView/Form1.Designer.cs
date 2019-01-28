@@ -33,6 +33,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboRowType = new System.Windows.Forms.ComboBox();
             this.comboBoxReadOnly = new System.Windows.Forms.ComboBox();
             this.comboBoxSimple = new System.Windows.Forms.ComboBox();
@@ -87,6 +88,32 @@
             this.dataGridView1.Size = new System.Drawing.Size(338, 147);
             this.dataGridView1.TabIndex = 5;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "Item 1",
+            "item (2)",
+            "Item\\t3",
+            "item 4",
+            "item 5",
+            "item 6",
+            "item 7",
+            "item 8",
+            "item 9",
+            "item 10",
+            "item 11",
+            "item 12",
+            "item 13",
+            "item 14",
+            "item 15",
+            "item 16",
+            "item 17"});
+            this.listBox1.Location = new System.Drawing.Point(3, 224);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(166, 69);
+            this.listBox1.TabIndex = 6;
+            // 
             // comboRowType
             // 
             this.comboRowType.FormattingEnabled = true;
@@ -131,7 +158,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 290);
+            this.ClientSize = new System.Drawing.Size(345, 298);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.comboBoxSimple);
             this.Controls.Add(this.comboBoxReadOnly);
             this.Controls.Add(this.comboRowType);
@@ -157,6 +185,7 @@
         private System.Windows.Forms.ComboBox comboRowType;
         private System.Windows.Forms.ComboBox comboBoxReadOnly;
         private System.Windows.Forms.ComboBox comboBoxSimple;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
