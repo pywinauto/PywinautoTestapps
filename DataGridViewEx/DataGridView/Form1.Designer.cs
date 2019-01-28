@@ -33,9 +33,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboRowType = new System.Windows.Forms.ComboBox();
-            this.comboBoxReadOnly = new System.Windows.Forms.ComboBox();
-            this.comboBoxSimple = new System.Windows.Forms.ComboBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,65 +80,48 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 13);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(338, 147);
+            this.dataGridView1.Size = new System.Drawing.Size(319, 147);
             this.dataGridView1.TabIndex = 5;
             // 
-            // comboRowType
+            // listBox1
             // 
-            this.comboRowType.FormattingEnabled = true;
-            this.comboRowType.Items.AddRange(new object[] {
-            "Numbers",
-            "Letters",
-            "Special symbols"});
-            this.comboRowType.Location = new System.Drawing.Point(3, 196);
-            this.comboRowType.Name = "comboRowType";
-            this.comboRowType.Size = new System.Drawing.Size(166, 21);
-            this.comboRowType.TabIndex = 6;
-            // 
-            // comboBoxReadOnly
-            // 
-            this.comboBoxReadOnly.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxReadOnly.FormattingEnabled = true;
-            this.comboBoxReadOnly.Items.AddRange(new object[] {
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
             "Item 1",
-            "Item 2",
-            "Last Item"});
-            this.comboBoxReadOnly.Location = new System.Drawing.Point(175, 196);
-            this.comboBoxReadOnly.Name = "comboBoxReadOnly";
-            this.comboBoxReadOnly.Size = new System.Drawing.Size(166, 21);
-            this.comboBoxReadOnly.TabIndex = 7;
-            // 
-            // comboBoxSimple
-            // 
-            this.comboBoxSimple.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBoxSimple.FormattingEnabled = true;
-            this.comboBoxSimple.Items.AddRange(new object[] {
-            "Simple 1",
-            "Simple Two",
-            "The Simplest"});
-            this.comboBoxSimple.Location = new System.Drawing.Point(175, 224);
-            this.comboBoxSimple.MaxDropDownItems = 3;
-            this.comboBoxSimple.Name = "comboBoxSimple";
-            this.comboBoxSimple.Size = new System.Drawing.Size(166, 72);
-            this.comboBoxSimple.TabIndex = 8;
-            this.comboBoxSimple.Text = "Simple 1";
+            "item (2)",
+            "Item\\t3",
+            "item 4",
+            "item 5",
+            "item 6",
+            "item 7",
+            "item 8",
+            "item 9",
+            "item 10",
+            "item 11",
+            "item 12",
+            "item 13",
+            "item 14",
+            "item 15",
+            "item 16",
+            "item 17"});
+            this.listBox1.Location = new System.Drawing.Point(351, 13);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(76, 173);
+            this.listBox1.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 290);
-            this.Controls.Add(this.comboBoxSimple);
-            this.Controls.Add(this.comboBoxReadOnly);
-            this.Controls.Add(this.comboRowType);
+            this.ClientSize = new System.Drawing.Size(431, 201);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -154,9 +135,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboRowType;
-        private System.Windows.Forms.ComboBox comboBoxReadOnly;
-        private System.Windows.Forms.ComboBox comboBoxSimple;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
