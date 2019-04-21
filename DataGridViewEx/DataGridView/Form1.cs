@@ -63,5 +63,18 @@ namespace DataGridView
         {
             dataGridView1.ColumnHeadersVisible = !dataGridView1.ColumnHeadersVisible;
         }
+
+        private void itemToolStripMenuItem12_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn());
+            updateContent();
+        }
+
+        private void itemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn());
+            dataGridView1.Rows.Add(new DataGridViewRow());
+            updateContent();
+        }
     }
 }
