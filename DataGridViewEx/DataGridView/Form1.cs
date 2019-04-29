@@ -76,5 +76,10 @@ namespace DataGridView
             dataGridView1.Rows.Add(new DataGridViewRow());
             updateContent();
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
