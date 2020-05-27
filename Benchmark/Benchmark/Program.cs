@@ -27,7 +27,7 @@ namespace WindowsFormsApp2
                 // Convert the input arguments to numbers:
                 uint mode = uint.Parse(args[0]);
                 uint itemsCount = uint.Parse(args[1]);
-                uint rowCount = uint.Parse(args[2]);
+                uint colCount = uint.Parse(args[2]);
 
 
                 if (itemsCount <= 0)
@@ -37,7 +37,7 @@ namespace WindowsFormsApp2
                     return 1;
                 }
 
-                if (rowCount <= 0)
+                if (colCount <= 0)
                 {
                     System.Console.WriteLine("Please enter a positive numeric arguments.");
 
@@ -46,7 +46,7 @@ namespace WindowsFormsApp2
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Form1(mode, itemsCount, rowCount));
+                Application.Run(new Form1(mode, itemsCount, colCount));
 
                 return 0;
             }

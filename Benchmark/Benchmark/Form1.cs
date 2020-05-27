@@ -12,9 +12,9 @@ namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
-        public Form1(uint mode, uint n, uint count)
+        public Form1(uint mode, uint n, uint colCount)
         {
-            InitializeComponent(mode, n, count);
+            InitializeComponent(mode, n, colCount);
         }
     }
 }
