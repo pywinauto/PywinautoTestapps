@@ -35,13 +35,13 @@ namespace WindowsFormsApp2
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.Text = "Simple Scalable Benchmark";
         }
         private void InitializeComponent(uint mode, uint itemsCount, uint colCount = 1, int seed = 0, int length = 8)
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form " + itemsCount.ToString();
+            this.Text = "Simple Scalable Benchmark " + itemsCount.ToString();
             uint rowCount = itemsCount / colCount;
             if (itemsCount % colCount != 0)
             {
